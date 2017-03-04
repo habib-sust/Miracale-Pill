@@ -13,6 +13,22 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     let states = ["Dhaka","Sylhet","Chittagong","Rajshahi","Khulna","Barisal"]
     @IBOutlet weak var statePicker: UIPickerView!
     @IBOutlet weak var stateButton: UIButton!
+    @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var countryTextField: UITextField!
+    @IBOutlet weak var zipCodeLabel: UILabel!
+    @IBOutlet weak var zipCodeTextField: UITextField!
+    @IBOutlet weak var buyNowButton: UIButton!
+    @IBOutlet weak var successImage: UIImageView!
+    @IBOutlet weak var pillImage: UIImageView!
+    @IBOutlet weak var pillPriceLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var streetLabel: UILabel!
+    @IBOutlet weak var streetTextField: UITextField!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var stateLabel: UILabel!
+    @IBOutlet weak var dividerView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +36,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         statePicker.dataSource = self
         statePicker.delegate = self
     }
+    @IBOutlet weak var pillLabel: UILabel!
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -29,6 +46,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBAction func stateButtonPressed(_ sender: Any) {
         
         statePicker.isHidden = false
+        countryLabel.isHidden = true
+        countryTextField.isHidden = true
+        zipCodeLabel.isHidden = true
+        zipCodeTextField.isHidden = true
+        buyNowButton.isHidden = true
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -46,7 +68,38 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         stateButton.setTitle(states[row], for: UIControlState.normal)
         
         statePicker.isHidden = true
+        countryLabel.isHidden = false
+        countryTextField.isHidden = false
+        zipCodeLabel.isHidden = false
+        zipCodeTextField.isHidden = false
+        buyNowButton.isHidden = false
     }
 
+    @IBAction func buyNowButtonPressed(_ sender: Any) {
+        
+        successImage.isHidden = false
+        statePicker.isHidden = true
+        countryLabel.isHidden = true
+        countryTextField.isHidden = true
+        zipCodeLabel.isHidden = true
+        zipCodeTextField.isHidden = true
+        buyNowButton.isHidden = true
+        pillImage.isHidden = true
+        pillLabel.isHidden = true
+        pillPriceLabel.isHidden = true
+        nameLabel.isHidden = true
+        nameTextField.isHidden = true
+        streetLabel.isHidden = true
+        streetTextField.isHidden = true
+        cityLabel.isHidden = true
+        cityTextField.isHidden = true
+        stateLabel.isHidden = true
+        stateButton.isHidden = true
+        
+        dividerView.isHidden = true
+        
+        
+        
+    }
 }
 
